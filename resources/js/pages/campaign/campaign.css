@@ -1,0 +1,9 @@
+.campaign{
+    flex: 4;
+    margin-top: 10px;
+}
+
+.campaignWidgets{
+    justify-content: center;
+    margin: 20px;
+}

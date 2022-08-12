@@ -1,0 +1,34 @@
+<?php
+
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+
+/*
+|--------------------------------------------------------------------------
+| Web Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register web routes for your application. These
+| routes are loaded by the RouteServiceProvider within a group which
+| contains the "web" middleware group. Now create something great!
+|
+*/
+
+
+Auth::routes();
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+Route::get('/home', [HomeController::class, 'home'])->name('home');
+
+Route::get('/campaign', [HomeController::class, 'campaign'])->name('dashboard');
+
+Route::get('/users', [HomeController::class, 'users'])->name('users');
+
+Route::get('/users/{user}', function ($slug) {
+    return view('./layouts/layout', ['title' => 'User Profile', 'pageID' => 'userProfile']);
+});
+
+Route::get('/newUser', [HomeController::class, 'newUser'])->name('newUser');
+
+Route::get('/scraper', [\App\Http\Controllers\ScraperController::class, 'scraper'])->name('scraper');

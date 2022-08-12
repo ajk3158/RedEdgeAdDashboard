@@ -1,0 +1,35 @@
+* {
+    font-family: 'Source Sans Pro', sans-serif;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    max-width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    overflow: scroll;
+    height: 120vh;
+    min-height:980px;
+
+}
+
+@media (max-height: 1000px) {
+    .container {
+        height: auto;
+    }
+}
+
+.content {
+    flex: 4;
+}
+
+
+.link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.active {
+    color: darkred;
+}
